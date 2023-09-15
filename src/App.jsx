@@ -1,5 +1,5 @@
-import Expense from "./Components/Expenses/Index";
-
+import ExpensesList from "./Components/ExpensesList/Index";
+import './index.css';
 function App() {
   const expenses = [
     {
@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       <h2>Lets get started</h2>
-      <Expense items={expenses}/>
+      <ExpensesList items={expenses}/>
     </>
   );
 }

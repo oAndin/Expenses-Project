@@ -1,4 +1,5 @@
-import ExpensesList from "./Components/ExpensesList/Index";
+import ExpensesList from './Components/ExpensesList/Index'
+
 import './index.css';
 function App() {
   const expenses = [
@@ -25,7 +26,8 @@ function App() {
   return (
     <>
       <h2>Lets get started</h2>
-      <ExpensesList items={expenses}/>
+      {/* <  items={expenses}/> */}
+      <ExpensesList items={expenses} />
     </>
   );
 }

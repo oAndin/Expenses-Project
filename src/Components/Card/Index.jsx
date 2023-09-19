@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import './Style.css';
 
 const Card = (props) => {

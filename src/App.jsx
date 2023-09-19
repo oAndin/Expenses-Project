@@ -26,7 +26,6 @@ function App() {
   return (
     <>
       <h2>Lets get started</h2>
-      {/* <  items={expenses}/> */}
       <ExpensesList items={expenses} />
     </>
   );

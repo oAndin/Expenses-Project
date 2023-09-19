@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import ExpenseItem from "../ExpenseItem/Index";
 
 const ExpensesList = (props) => {

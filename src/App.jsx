@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import ExpensesList from "./Components/ExpensesList/Index";
 import NewExpense from "./Components/NewExpense/Index";
 import './index.css'; 
+=======
+import ExpensesList from './Components/ExpensesList/Index'
+
+import './index.css';
+>>>>>>> 09f3b299c655777b564c558a598920a4c5cab369
 function App() {
   const expenses = [
     {
@@ -25,8 +31,13 @@ function App() {
   ];
   return (
     <>
+<<<<<<< HEAD
       <NewExpense/>
       <ExpensesList items={expenses}/>
+=======
+      <h2>Lets get started</h2>
+      <ExpensesList items={expenses} />
+>>>>>>> 09f3b299c655777b564c558a598920a4c5cab369
     </>
   );
 }

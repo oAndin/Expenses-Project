@@ -1,8 +1,9 @@
-import ExpenseDate from '../ExpenseDate/Index';
-import './ExpenseItem.css';
-import '../ExpensesList/ExpensesList.css'
-import Card from  '../Card/Index'
+/* eslint-disable react/prop-types */
 import { useState } from 'react';
+import './ExpenseItem.css';
+import '../ExpensesList/ExpensesList.css';
+import Card from '../Card/Index';
+import ExpenseDate from '../ExpenseDate/Index';
 
 const ExpenseItem = (props) => {
 
@@ -10,10 +11,11 @@ const ExpenseItem = (props) => {
 
     const clickHandler = () => {
         setTitle('Updated!');
+        console.log(title);
     }
 
     return (
-            <Card className="expense-item">
+        <Card className="expense-item">
             <ExpenseDate date={props.date} />
                 <div className="expense-item__description">
                     <h2>{props.title}</h2>
@@ -21,6 +23,7 @@ const ExpenseItem = (props) => {
                 </div>
                 <button onClick={clickHandler}>Change title!</button>
             </Card>
+
     );
 };
 

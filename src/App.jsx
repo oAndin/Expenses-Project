@@ -1,6 +1,6 @@
 import ExpensesList from "./Components/ExpensesList/Index";
 import NewExpense from "./Components/NewExpense/Index";
-import './index.css'; 
+import './index.css';
 function App() {
   const expenses = [
     {
@@ -23,10 +23,16 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
+
+  const addExpenseHandler = expense => {
+    console.log('In App.js');
+    console.log(expense);
+  }
+
   return (
     <>
-      <NewExpense/>
-      <ExpensesList items={expenses}/>
+      <NewExpense onAddExpense={addExpenseHandler} />
+      <ExpensesList items={expenses} />
     </>
   );
 }

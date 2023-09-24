@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Style.css';
 
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
 
 
     const [enteredTitle, setEnteredTitle] = useState('');
@@ -42,22 +42,41 @@ const ExpenseForm = () => {
             amount: enteredAmount,
             date: new Date(enteredDate),
         }
-        console.log(expenseData);
+        props.onSaveExpenseData();
+        setEnteredTitle('');
+        setEnteredAmount('');
+        setEnteredDate('');
     }
     return (
         <form onSubmit={submitHandler} >
             <div className="new-expense__controls">
                 <div className="new-expense__control">
                     <label>Title</label>
-                    <input type='text' onChange={(event) => { inputChangeHandler('title', event.target.value) }} />
+                    <input
+                        type='text'
+                        onChange={(event) => { inputChangeHandler('title', event.target.value) }}
+                        value={enteredTitle}
+                    />
                 </div>
                 <div className="new-expense__control">
                     <label>Amount</label>
-                    <input type='number' min='0.01' step='0.01' onChange={(event) => { inputChangeHandler('date', event.target.value) }} />
+                    <input
+                        type='number'
+                        min='0.01'
+                        step='0.01'
+                        onChange={(event) => { inputChangeHandler('date', event.target.value) }}
+                        value={setEnteredAmount}
+                    />
                 </div>
                 <div className="new-expense__control">
                     <label>Date</label>
-                    <input type='date' min='2023-01-01' max='2023-12-31' onChange={(event) => { inputChangeHandler('amount', event.target.value) }} />
+                    <input
+                        type='date'
+                        min='2023-01-01'
+                        max='2023-12-31'
+                        onChange={(event) => { inputChangeHandler('amount', event.target.value) }}
+                        value={setEnteredDate}
+                    />
                 </div>
             </div>
             <div className="new-expense__actions">

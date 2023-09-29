@@ -1,10 +1,19 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react";
 import ExpenseItem from "../ExpenseItem/Index";
+import ExpensesFilter from "../ExpensesFilter/Index";
 
 const ExpensesList = (props) => {
 
+    const [filteredYear, setFilteredYear] = useState('2020');
+
+    const filterChangeHandler = selectedYear => {
+        setFilteredYear(selectedYear);
+    }
+
     return (
         <div className="expensesList">
+            <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
             <ExpenseItem
                 title={props.items[0].title}
                 amount={props.items[0].amount}

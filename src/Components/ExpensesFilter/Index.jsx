@@ -1,7 +1,7 @@
 
 import './Style.css';
 
-const ExpensesFilter = () => {
+const ExpensesFilter = (props) => {
   const dropdownChangeHandler = () => {
     console.log(event.target.value);
   }
